@@ -21,12 +21,12 @@ const Alquiler = database.define('alquiler', {
     propiedadId: {
         type: Sequelize.INTEGER,
         allowNull: false,
-        foreignKey: Persona.id
+        foreignKey: Propiedad.id
     },
     clienteId: {
         type: Sequelize.INTEGER,
         allowNull: false,
-        foreignKey: Taller.id
+        foreignKey: Persona.id
     },
     porcentajeAcme: {
         type: Sequelize.DOUBLE,

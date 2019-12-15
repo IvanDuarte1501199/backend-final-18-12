@@ -6,12 +6,12 @@ const propiedadesRuta = Router();
 
 propiedadesRuta.get('/', obtenerPropiedades);
 
-propiedadesRuta.get('/:idPersona', obtenerPropiedad);
+propiedadesRuta.get('/:idPropiedad', obtenerPropiedad);
 
 propiedadesRuta.post('/', crearPropiedad);
 
-propiedadesRuta.put('/:idPersona', modificarPropiedad);
+propiedadesRuta.put('/:idPropiedad', modificarPropiedad);
 
-propiedadesRuta.delete('/:idPersona', borrarPropiedad);
+propiedadesRuta.delete('/:idPropiedad', borrarPropiedad);
 
 export default propiedadesRuta;

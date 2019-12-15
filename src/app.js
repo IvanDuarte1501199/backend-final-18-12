@@ -1,14 +1,9 @@
 import express from 'express';
 import morgan from 'morgan';
 import database from './database/database';
-import alumnosRuta from './routes/alumno.route';
-import profesorRuta from './routes/profesor.route';
-import cursoRuta from './routes/curso.route';
-import cursoalumnoRuta from './routes/curso_alumno.route';
-
-
-
-
+import personasRuta from './routes/personas.route';
+import alquileresRuta from './routes/alquileres.route';
+import propiedadesRuta from './routes/propiedades.route';
 //inicializar express
 const app = express();
 
@@ -26,11 +21,9 @@ app.use(function (req, res, next) {
 });
 
 //rutas
-app.use('/api/alumnos', alumnosRuta);
-app.use('/api/profesores', profesorRuta);
-app.use('/api/cursos', cursoRuta);
-app.use('/api/cursos_alumno', cursoalumnoRuta);
-
+app.use('/api/personas', personasRuta);
+app.use('/api/alquileres', alquileresRuta);
+app.use('/api/propiedades', propiedadesRuta);
 //sincronizacion con la db
 database.sync()
   .then(() => console.log('Base actualizada'));

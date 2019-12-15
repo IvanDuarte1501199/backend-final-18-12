@@ -19,25 +19,19 @@ const Propiedad = database.define('propiedad', {
     },
     descripcion: {
         type: Sequelize.STRING,
-        allowNull: false
     },
     notas: {
         type: Sequelize.STRING,
-        allowNull: false
     },
     precioXdia: {
         type: Sequelize.DOUBLE,
         allowNull: false
     },
     dueñoId: {
-        type: Sequelize.NUMBER,
+        type: Sequelize.INTEGER,
         allowNull: false,
         foreignKey: Persona.id
     },
-    dueñoId: {
-        type: Sequelize.BOOLEAN,
-        allowNull: false
-    }
 });
 Propiedad.belongsTo(Persona,{
     foreignKey: 'dueñoId',

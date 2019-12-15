@@ -1,7 +1,7 @@
 import Propiedad from '../models/propiedad';
 import { Op } from 'sequelize';
 
-export async function obtenerPropiedads(req, res) {
+export async function obtenerPropiedades(req, res) {
     try {
         const propiedades = await Propiedad.findAll();
         res.json(propiedades);
@@ -14,15 +14,16 @@ export async function obtenerPropiedads(req, res) {
 }
 
 export async function crearPropiedad(req, res) {
-    const { id, nombre, apellido, dni, fechaNacimiento, tipo } = req.body;
+    const { id, nombre, ubicacion, descripcion, notas, precioXdia, dueñoId } = req.body;
     try {
         const propiedad = await Propiedad.create({
             id,
             nombre,
-            apellido,
-            dni,
-            fechaNacimiento,
-            tipo
+            ubicacion,
+            descripcion,
+            notas,
+            precioXdia,
+            dueñoId
         });
 
         if (propiedad) {
@@ -88,19 +89,20 @@ export async function borrarPropiedad(req, res) {
 
 export async function modificarPropiedad(req, res) {
     const { idPropiedad } = req.params;
-    const { id, nombre, apellido, dni, fechaNacimiento, tipo } = req.body;
+    const { id, nombre, ubicacion, descripcion, notas, precioXdia, dueñoId } = req.body;
     try {
         const propiedad = await Propiedad.findOne({
             where: { id: idPropiedad }
         })
         if (propiedad) {
             const propiedadModificado = await propiedad.update({
-                id, 
-                nombre, 
-                apellido,
-                dni, 
-                fechaNacimiento, 
-                tipo
+                id,
+                nombre,
+                ubicacion,
+                descripcion,
+                notas,
+                precioXdia,
+                dueñoId
             });
 
             res.json({

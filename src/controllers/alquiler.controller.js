@@ -1,7 +1,7 @@
 import Alquiler from '../models/alquiler';
 import { Op } from 'sequelize';
 
-export async function obtenerAlquilers(req, res) {
+export async function obtenerAlquileres(req, res) {
     try {
         const alquileres = await Alquiler.findAll();
         res.json(alquileres);

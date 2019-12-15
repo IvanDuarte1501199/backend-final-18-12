@@ -6,12 +6,12 @@ const alquileresRuta = Router();
 
 alquileresRuta.get('/', obtenerAlquileres);
 
-alquileresRuta.get('/:idPersona', obtenerAlquiler);
+alquileresRuta.get('/:idAlquiler', obtenerAlquiler);
 
 alquileresRuta.post('/', crearAlquiler);
 
-alquileresRuta.put('/:idPersona', modificarAlquiler);
+alquileresRuta.put('/:idAlquiler', modificarAlquiler);
 
-alquileresRuta.delete('/:idPersona', borrarAlquiler);
+alquileresRuta.delete('/:idAlquiler', borrarAlquiler);
 
 export default alquileresRuta;
