@@ -1,5 +1,4 @@
 import Alquiler from '../models/alquiler';
-import { Op } from 'sequelize';
 
 export async function obtenerAlquileres(req, res) {
     try {
