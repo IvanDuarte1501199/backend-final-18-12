@@ -35,6 +35,7 @@ const Propiedad = database.define('propiedad', {
 });
 Propiedad.belongsTo(Persona,{
     foreignKey: 'dueñoId',
+    onDelete: 'CASCADE',
 });
 
 export default Propiedad;

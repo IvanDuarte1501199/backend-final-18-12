@@ -35,6 +35,7 @@ const Alquiler = database.define('alquiler', {
 });
 Alquiler.belongsTo(Persona,{
     foreignKey: 'clienteId',
+    onDelete: 'CASCADE',
 });
 Alquiler.belongsTo(Propiedad,{
     foreignKey: 'propiedadId',
